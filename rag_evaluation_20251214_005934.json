@@ -1,0 +1,646 @@
+[
+  {
+    "timestamp": "2025-12-14T00:59:13.809308",
+    "question": "What are the best pizza places in New York?",
+    "num_documents_retrieved": 8,
+    "answer_length": 325,
+    "retrieval_relevance": {
+      "explanation": [
+        "Step 1: Identify the keywords in the question, which are 'pizza', 'places', and 'New York'.",
+        "Step 2: Analyze each document to see if it contains any of these keywords or semantic meaning related to the question.",
+        "Step 3: Document 1 mentions 'New York style pizza', which is relevant to the question.",
+        "Step 4: Document 2 mentions 'NYC skyline', which implies a connection to New York, and 'Sals pizza', which is relevant to the question.",
+        "Step 5: Document 3 mentions 'NYC', which is relevant to the question, but it's about a restaurant in CDMX, not New York.",
+        "Step 6: Documents 4, 5, 6, 7, and 8 do not mention 'New York' or 'NYC' in the context of pizza places, but Document 8 mentions 'Mexican pizzas' which is somewhat related to pizza.",
+        "Step 7: Based on the analysis, Documents 1, 2, and 3 contain some relevant information, while Documents 4, 5, 6, 7, and 8 are less relevant or not relevant at all.",
+        "Step 8: Since some documents contain relevant information, the overall relevance is True, but the relevance score should reflect the mixed nature of the documents."
+      ],
+      "relevant": true,
+      "relevance_score": 3
+    },
+    "answer_quality": {
+      "explanation": "The answer is based on the retrieved facts and provides a specific recommendation for a New York-style pizza place in the given context.",
+      "is_grounded": true,
+      "is_helpful": true,
+      "hallucination_detected": false,
+      "quality_score": 4
+    },
+    "answer_relevance": {
+      "explanation": "The answer provides a specific recommendation for a New York-style pizza place, but it does not fully address the question as it only mentions one place and implies that the information is limited by the provided context, rather than giving a comprehensive list of the best pizza places in New York.",
+      "addresses_question": true,
+      "completeness_score": 3
+    },
+    "context_precision": {
+      "explanation": "Relevant documents are those that mention pizza places in New York. Document 1 is relevant because it mentions 'New York style pizza' and Document 2 is relevant because it mentions the 'NYC skyline', implying a connection to New York. Document 3 is relevant because it compares food to 'some places in NYC', implying knowledge of New York's food scene. The other documents are not relevant because they either do not mention New York or mention pizza places in other cities.",
+      "precision_score": 0.375,
+      "num_relevant": 3,
+      "num_total": 8
+    },
+    "rag_output": {
+      "question": "What are the best pizza places in New York?",
+      "documents": [
+        "SUBREDDIT: newjersey\nTHEME: things_to_do\nLOCATION: Livingston\nPLACE: Master Pizza\nNOTES: Hole in the wall, great New York style pizza\nSENTIMENT: great",
+        "SUBREDDIT: newjersey\nTHEME: things_to_do\nLOCATION: West New York\nPLACE: Sals pizza on Bergenline\nNOTES: Best view of the NYC skyline\nSENTIMENT: great",
+        "SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: CDMX\nPLACE: El Marro Restaurant y Mariscos\nNOTES: Authentic food, even better than some places in NYC\nSENTIMENT: great",
+        "SUBREDDIT: baltimore\nTHEME: restaurants\nLOCATION: Mount Vernon\nPLACE: Iggy's Pizza\nNOTES: People say Joe Squared has the best pizza, but Iggy's is a favorite.\nSENTIMENT: great",
+        "SUBREDDIT: philadelphia\nTHEME: restaurants\nLOCATION: Bryn Mawr, PA\nPLACE: Johnny's Pizza\nNOTES: Known for both amazing steaks and pizza\nSENTIMENT: great",
+        "SUBREDDIT: newjersey\nTHEME: restaurants\nLOCATION: Edison\nPLACE: Daniel's Pizzeria in New Brunswick\nNOTES: Vodka sauce pizza\nSENTIMENT: good",
+        "SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: New Kensington\nPLACE: Las Palmas\nNOTES: Recommended for good tacos and tortas, but only available in Beechview.\nSENTIMENT: good",
+        "SUBREDDIT: philadelphia\nTHEME: restaurants\nLOCATION: 10th & Wolf\nPLACE: Los Gallos\nNOTES: Serves stellar Mexican pizzas.\nSENTIMENT: great"
+      ],
+      "context": [
+        "Place: Master Pizza | City: N/A | Location: Livingston | Theme: things_to_do | Sentiment: great | Notes: SUBREDDIT: newjersey\nTHEME: things_to_do\nLOCATION: Livingston\nPLACE: Master Pizza\nNOTES: Hole in the wall, great New York style pizza\nSENTIMENT: great",
+        "Place: Sals pizza on Bergenline | City: N/A | Location: West New York | Theme: things_to_do | Sentiment: great | Notes: SUBREDDIT: newjersey\nTHEME: things_to_do\nLOCATION: West New York\nPLACE: Sals pizza on Bergenline\nNOTES: Best view of the NYC skyline\nSENTIMENT: great",
+        "Place: El Marro Restaurant y Mariscos | City: N/A | Location: CDMX | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: CDMX\nPLACE: El Marro Restaurant y Mariscos\nNOTES: Authentic food, even better than some places in NYC\nSENTIMENT: great",
+        "Place: Iggy's Pizza | City: N/A | Location: Mount Vernon | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: baltimore\nTHEME: restaurants\nLOCATION: Mount Vernon\nPLACE: Iggy's Pizza\nNOTES: People say Joe Squared has the best pizza, but Iggy's is a favorite.\nSENTIMENT: great",
+        "Place: Johnny's Pizza | City: N/A | Location: Bryn Mawr, PA | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: philadelphia\nTHEME: restaurants\nLOCATION: Bryn Mawr, PA\nPLACE: Johnny's Pizza\nNOTES: Known for both amazing steaks and pizza\nSENTIMENT: great",
+        "Place: Daniel's Pizzeria in New Brunswick | City: N/A | Location: Edison | Theme: restaurants | Sentiment: good | Notes: SUBREDDIT: newjersey\nTHEME: restaurants\nLOCATION: Edison\nPLACE: Daniel's Pizzeria in New Brunswick\nNOTES: Vodka sauce pizza\nSENTIMENT: good",
+        "Place: Las Palmas | City: N/A | Location: New Kensington | Theme: restaurants | Sentiment: good | Notes: SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: New Kensington\nPLACE: Las Palmas\nNOTES: Recommended for good tacos and tortas, but only available in Beechview.\nSENTIMENT: good",
+        "Place: Los Gallos | City: N/A | Location: 10th & Wolf | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: philadelphia\nTHEME: restaurants\nLOCATION: 10th & Wolf\nPLACE: Los Gallos\nNOTES: Serves stellar Mexican pizzas.\nSENTIMENT: great"
+      ],
+      "answer": "Based on the provided context, there is only one place that serves New York-style pizza: \n\n1. Master Pizza in Livingston - It's described as a \"hole in the wall\" with \"great New York style pizza\". \n\nNote that the other places mentioned may serve pizza, but they are not specifically described as serving New York-style pizza.",
+      "metadatas": [
+        {
+          "places": "Master Pizza",
+          "source_file": "1e1kbs1_cleaned_extracted.json",
+          "subreddit_name": "newjersey",
+          "theme": "things_to_do",
+          "notes": "Hole in the wall, great New York style pizza",
+          "sentiment": "great",
+          "location": "Livingston"
+        },
+        {
+          "places": "Sals pizza on Bergenline",
+          "sentiment": "great",
+          "notes": "Best view of the NYC skyline",
+          "location": "West New York",
+          "subreddit_name": "newjersey",
+          "source_file": "1e1kbs1_cleaned_extracted.json",
+          "theme": "things_to_do"
+        },
+        {
+          "places": "El Marro Restaurant y Mariscos",
+          "sentiment": "great",
+          "source_file": "1ktv40v_cleaned_extracted.json",
+          "subreddit_name": "pittsburgh",
+          "location": "CDMX",
+          "theme": "restaurants",
+          "notes": "Authentic food, even better than some places in NYC"
+        },
+        {
+          "subreddit_name": "baltimore",
+          "sentiment": "great",
+          "places": "Iggy's Pizza",
+          "location": "Mount Vernon",
+          "theme": "restaurants",
+          "notes": "People say Joe Squared has the best pizza, but Iggy's is a favorite.",
+          "source_file": "g3ben_cleaned_extracted.json"
+        },
+        {
+          "theme": "restaurants",
+          "subreddit_name": "philadelphia",
+          "location": "Bryn Mawr, PA",
+          "source_file": "1gvtn2m_cleaned_extracted.json",
+          "notes": "Known for both amazing steaks and pizza",
+          "sentiment": "great",
+          "places": "Johnny's Pizza"
+        },
+        {
+          "theme": "restaurants",
+          "subreddit_name": "newjersey",
+          "location": "Edison",
+          "places": "Daniel's Pizzeria in New Brunswick",
+          "notes": "Vodka sauce pizza",
+          "sentiment": "good",
+          "source_file": "18uj5km_cleaned_extracted.json"
+        },
+        {
+          "places": "Las Palmas",
+          "source_file": "15fqa8x_cleaned_extracted.json",
+          "theme": "restaurants",
+          "sentiment": "good",
+          "location": "New Kensington",
+          "notes": "Recommended for good tacos and tortas, but only available in Beechview.",
+          "subreddit_name": "pittsburgh"
+        },
+        {
+          "sentiment": "great",
+          "places": "Los Gallos",
+          "subreddit_name": "philadelphia",
+          "source_file": "r57we8_cleaned_extracted.json",
+          "location": "10th & Wolf",
+          "theme": "restaurants",
+          "notes": "Serves stellar Mexican pizzas."
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-12-14T00:59:16.420968",
+    "question": "Hidden gems for coffee in Seattle",
+    "num_documents_retrieved": 8,
+    "answer_length": 197,
+    "retrieval_relevance": {
+      "explanation": "The question asks for hidden gems for coffee in Seattle, but all the provided documents are about locations in Boston. Although the documents mention 'hidden gems' and 'coffee', which are related to the question, the location is completely different. Since the location is the primary factor in determining relevance to the question, these documents are not relevant.",
+      "relevant": false,
+      "relevance_score": 1
+    },
+    "answer_quality": {
+      "explanation": "The answer is honest about the lack of information regarding Seattle, but it does not provide any helpful information for the user's query about hidden gems for coffee in Seattle.",
+      "is_grounded": true,
+      "is_helpful": false,
+      "hallucination_detected": false,
+      "quality_score": 2
+    },
+    "answer_relevance": {
+      "explanation": "The answer does not provide any information about hidden gems for coffee in Seattle. Instead, it mentions a lack of context about Seattle and refers to Boston, which is not relevant to the question.",
+      "addresses_question": false,
+      "completeness_score": 1
+    },
+    "context_precision": {
+      "explanation": "None of the documents are relevant to answering the question because they all pertain to hidden gems for coffee in Boston, not Seattle.",
+      "precision_score": 0.0,
+      "num_relevant": 0,
+      "num_total": 8
+    },
+    "rag_output": {
+      "question": "Hidden gems for coffee in Seattle",
+      "documents": [
+        "SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Boston\nPLACE: Pepita Coffee\nNOTES: Inside Lamplighter Brewing in Cambridge\nSENTIMENT: great",
+        "SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Boston\nPLACE: Three Little Figs\nNOTES: Best drip coffee in the area\nSENTIMENT: great",
+        "SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Boston\nPLACE: Barismo\nNOTES: Fantastic spot in Cambridge with great coffee\nSENTIMENT: great",
+        "SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Boston\nPLACE: Andala Coffee House\nNOTES: really good coffee\nSENTIMENT: great",
+        "SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Boston\nPLACE: Big Bear Cafe\nNOTES: solid specialty and espresso drinks, good drip coffee, tasty breakfast sandwiches\nSENTIMENT: great",
+        "SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Kenmore\nPLACE: Cafe 472\nNOTES: Local cafe with great options.\nSENTIMENT: good",
+        "SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Boston\nPLACE: Render Coffee\nNOTES: good spot for working, solid coffee\nSENTIMENT: good",
+        "SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Boston\nPLACE: Three Little Figs\nNOTES: Best fancy coffee\nSENTIMENT: great"
+      ],
+      "context": [
+        "Place: Pepita Coffee | City: N/A | Location: Boston | Theme: hidden_gems | Sentiment: great | Notes: SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Boston\nPLACE: Pepita Coffee\nNOTES: Inside Lamplighter Brewing in Cambridge\nSENTIMENT: great",
+        "Place: Three Little Figs | City: N/A | Location: Boston | Theme: hidden_gems | Sentiment: great | Notes: SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Boston\nPLACE: Three Little Figs\nNOTES: Best drip coffee in the area\nSENTIMENT: great",
+        "Place: Barismo | City: N/A | Location: Boston | Theme: hidden_gems | Sentiment: great | Notes: SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Boston\nPLACE: Barismo\nNOTES: Fantastic spot in Cambridge with great coffee\nSENTIMENT: great",
+        "Place: Andala Coffee House | City: N/A | Location: Boston | Theme: hidden_gems | Sentiment: great | Notes: SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Boston\nPLACE: Andala Coffee House\nNOTES: really good coffee\nSENTIMENT: great",
+        "Place: Big Bear Cafe | City: N/A | Location: Boston | Theme: hidden_gems | Sentiment: great | Notes: SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Boston\nPLACE: Big Bear Cafe\nNOTES: solid specialty and espresso drinks, good drip coffee, tasty breakfast sandwiches\nSENTIMENT: great",
+        "Place: Cafe 472 | City: N/A | Location: Kenmore | Theme: hidden_gems | Sentiment: good | Notes: SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Kenmore\nPLACE: Cafe 472\nNOTES: Local cafe with great options.\nSENTIMENT: good",
+        "Place: Render Coffee | City: N/A | Location: Boston | Theme: hidden_gems | Sentiment: good | Notes: SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Boston\nPLACE: Render Coffee\nNOTES: good spot for working, solid coffee\nSENTIMENT: good",
+        "Place: Three Little Figs | City: N/A | Location: Boston | Theme: hidden_gems | Sentiment: great | Notes: SUBREDDIT: boston\nTHEME: hidden_gems\nLOCATION: Boston\nPLACE: Three Little Figs\nNOTES: Best fancy coffee\nSENTIMENT: great"
+      ],
+      "answer": "Unfortunately, the provided context does not mention Seattle. It appears to be about hidden gems for coffee in Boston. Therefore, I cannot provide recommendations for Seattle based on this context.",
+      "metadatas": [
+        {
+          "places": "Pepita Coffee",
+          "sentiment": "great",
+          "source_file": "1b9q6ll_cleaned_extracted.json",
+          "theme": "hidden_gems",
+          "notes": "Inside Lamplighter Brewing in Cambridge",
+          "location": "Boston",
+          "subreddit_name": "boston"
+        },
+        {
+          "places": "Three Little Figs",
+          "source_file": "1b9q6ll_cleaned_extracted.json",
+          "subreddit_name": "boston",
+          "sentiment": "great",
+          "theme": "hidden_gems",
+          "notes": "Best drip coffee in the area",
+          "location": "Boston"
+        },
+        {
+          "source_file": "1b9q6ll_cleaned_extracted.json",
+          "location": "Boston",
+          "theme": "hidden_gems",
+          "sentiment": "great",
+          "notes": "Fantastic spot in Cambridge with great coffee",
+          "places": "Barismo",
+          "subreddit_name": "boston"
+        },
+        {
+          "subreddit_name": "boston",
+          "notes": "really good coffee",
+          "sentiment": "great",
+          "places": "Andala Coffee House",
+          "location": "Boston",
+          "theme": "hidden_gems",
+          "source_file": "1b9q6ll_cleaned_extracted.json"
+        },
+        {
+          "sentiment": "great",
+          "theme": "hidden_gems",
+          "subreddit_name": "boston",
+          "source_file": "1b9q6ll_cleaned_extracted.json",
+          "places": "Big Bear Cafe",
+          "location": "Boston",
+          "notes": "solid specialty and espresso drinks, good drip coffee, tasty breakfast sandwiches"
+        },
+        {
+          "source_file": "1b9q6ll_cleaned_extracted.json",
+          "sentiment": "good",
+          "places": "Cafe 472",
+          "theme": "hidden_gems",
+          "location": "Kenmore",
+          "notes": "Local cafe with great options.",
+          "subreddit_name": "boston"
+        },
+        {
+          "source_file": "1b9q6ll_cleaned_extracted.json",
+          "sentiment": "good",
+          "location": "Boston",
+          "notes": "good spot for working, solid coffee",
+          "theme": "hidden_gems",
+          "places": "Render Coffee",
+          "subreddit_name": "boston"
+        },
+        {
+          "location": "Boston",
+          "notes": "Best fancy coffee",
+          "sentiment": "great",
+          "source_file": "2155ic_cleaned_extracted.json",
+          "subreddit_name": "boston",
+          "theme": "hidden_gems",
+          "places": "Three Little Figs"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-12-14T00:59:19.729147",
+    "question": "Best BBQ restaurants in Austin",
+    "num_documents_retrieved": 8,
+    "answer_length": 592,
+    "retrieval_relevance": {
+      "explanation": "To determine the relevance of the provided facts to the question about the best BBQ restaurants in Austin, we need to analyze each document for keywords or semantic meaning related to 'BBQ' and 'Austin'. Documents 2, 4, 6, and 8 contain the keyword 'BBQ', which is directly related to the question. However, only none of these documents mention 'Austin' as the location. Document 1 mentions 'Austin' but as a location in New Jersey, not Texas, and does not mention 'BBQ'. Documents 3, 5, and 7 are somewhat related as they mention food or restaurants, but they either do not mention 'BBQ' or are not located in Austin. Given the criteria, we consider facts relevant if they contain keywords or semantic meaning related to the question, even if they are not perfectly matched.",
+      "relevant": false,
+      "relevance_score": 1
+    },
+    "answer_quality": {
+      "explanation": "The answer is based on the retrieved facts but does not provide any BBQ restaurants in Austin. It suggests BBQ restaurants from other locations, which might be helpful to the user if they are willing to travel.",
+      "is_grounded": true,
+      "is_helpful": true,
+      "hallucination_detected": false,
+      "quality_score": 4
+    },
+    "answer_relevance": {
+      "explanation": "The answer does not provide any BBQ restaurants in Austin, which was the specific request. It offers alternatives in other locations, but does not fulfill the user's query about Austin.",
+      "addresses_question": false,
+      "completeness_score": 1
+    },
+    "context_precision": {
+      "explanation": "Only documents that mention BBQ restaurants in Austin are relevant. However, none of the documents mention Austin, TX, but Document 1 mentions Austin, NJ, which is not relevant to the question about Austin, TX. Documents 2, 4, and 6 mention BBQ restaurants, but they are in Philadelphia, PA. Document 8 mentions BBQ, but it's in Melbourne, FL. Document 5 mentions Texas BBQ, but it's in Montclair, NJ. Therefore, none of the documents are directly relevant to answering the question about the best BBQ restaurants in Austin, TX.",
+      "precision_score": 0.0,
+      "num_relevant": 0,
+      "num_total": 8
+    },
+    "rag_output": {
+      "question": "Best BBQ restaurants in Austin",
+      "documents": [
+        "SUBREDDIT: newjersey\nTHEME: restaurants\nLOCATION: Austin, NJ\nPLACE: Austin Cho\nNOTES: Recommended restaurant with great food.\nSENTIMENT: great",
+        "SUBREDDIT: philadelphia\nTHEME: restaurants\nLOCATION: Philadelphia\nPLACE: Mike's BBQ\nNOTES: Highly recommended for BBQ, also nearby Itslisn bakery with cannoli\nSENTIMENT: great",
+        "SUBREDDIT: newjersey\nTHEME: restaurants\nLOCATION: East Hanover\nPLACE: Super Chix\nNOTES: Texas-style chicken restaurant with good food.\nSENTIMENT: good",
+        "SUBREDDIT: philadelphia\nTHEME: hidden_gems\nLOCATION: Philadelphia\nPLACE: Mikes BBQ\nNOTES: Highly recommended for BBQ\nSENTIMENT: great",
+        "SUBREDDIT: newjersey\nTHEME: things_to_do\nLOCATION: Montclair\nPLACE: Kanoon's Halal Texas BBQ\nNOTES: Try the restaurant's unique fusion of flavors.\nSENTIMENT: good",
+        "SUBREDDIT: philadelphia\nTHEME: restaurants\nLOCATION: South Philly, Philadelphia, PA\nPLACE: Mike's BBQ\nNOTES: Highly recommended barbecue restaurant\nSENTIMENT: great",
+        "SUBREDDIT: newjersey\nTHEME: restaurants\nLOCATION: New Brunswick\nPLACE: Stuff yer face\nNOTES: Still open, but the East Brunswick location is now Gusto Grill.\nSENTIMENT: okay",
+        "SUBREDDIT: florida\nTHEME: hidden_gems\nLOCATION: Melbourne\nPLACE: Cryderman's\nNOTES: Best BBQ in the area\nSENTIMENT: great"
+      ],
+      "context": [
+        "Place: Austin Cho | City: N/A | Location: Austin, NJ | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: newjersey\nTHEME: restaurants\nLOCATION: Austin, NJ\nPLACE: Austin Cho\nNOTES: Recommended restaurant with great food.\nSENTIMENT: great",
+        "Place: Mike's BBQ | City: N/A | Location: Philadelphia | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: philadelphia\nTHEME: restaurants\nLOCATION: Philadelphia\nPLACE: Mike's BBQ\nNOTES: Highly recommended for BBQ, also nearby Itslisn bakery with cannoli\nSENTIMENT: great",
+        "Place: Super Chix | City: N/A | Location: East Hanover | Theme: restaurants | Sentiment: good | Notes: SUBREDDIT: newjersey\nTHEME: restaurants\nLOCATION: East Hanover\nPLACE: Super Chix\nNOTES: Texas-style chicken restaurant with good food.\nSENTIMENT: good",
+        "Place: Mikes BBQ | City: N/A | Location: Philadelphia | Theme: hidden_gems | Sentiment: great | Notes: SUBREDDIT: philadelphia\nTHEME: hidden_gems\nLOCATION: Philadelphia\nPLACE: Mikes BBQ\nNOTES: Highly recommended for BBQ\nSENTIMENT: great",
+        "Place: Kanoon's Halal Texas BBQ | City: N/A | Location: Montclair | Theme: things_to_do | Sentiment: good | Notes: SUBREDDIT: newjersey\nTHEME: things_to_do\nLOCATION: Montclair\nPLACE: Kanoon's Halal Texas BBQ\nNOTES: Try the restaurant's unique fusion of flavors.\nSENTIMENT: good",
+        "Place: Mike's BBQ | City: N/A | Location: South Philly, Philadelphia, PA | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: philadelphia\nTHEME: restaurants\nLOCATION: South Philly, Philadelphia, PA\nPLACE: Mike's BBQ\nNOTES: Highly recommended barbecue restaurant\nSENTIMENT: great",
+        "Place: Stuff yer face | City: N/A | Location: New Brunswick | Theme: restaurants | Sentiment: okay | Notes: SUBREDDIT: newjersey\nTHEME: restaurants\nLOCATION: New Brunswick\nPLACE: Stuff yer face\nNOTES: Still open, but the East Brunswick location is now Gusto Grill.\nSENTIMENT: okay",
+        "Place: Cryderman's | City: N/A | Location: Melbourne | Theme: hidden_gems | Sentiment: great | Notes: SUBREDDIT: florida\nTHEME: hidden_gems\nLOCATION: Melbourne\nPLACE: Cryderman's\nNOTES: Best BBQ in the area\nSENTIMENT: great"
+      ],
+      "answer": "Unfortunately, there are no BBQ restaurants mentioned in the context that are located in Austin. However, I can suggest some BBQ restaurants mentioned in the context that might be worth considering if you're willing to travel:\n\n1. Mike's BBQ (Philadelphia) - Highly recommended for BBQ.\n2. Kanoon's Halal Texas BBQ (Montclair) - Unique fusion of flavors.\n\nPlease note that these recommendations are not specific to Austin, but rather based on the provided context. If you're looking for BBQ restaurants in Austin, I would need more information or context to provide a relevant recommendation.",
+      "metadatas": [
+        {
+          "subreddit_name": "newjersey",
+          "notes": "Recommended restaurant with great food.",
+          "source_file": "1k8djxp_cleaned_extracted.json",
+          "theme": "restaurants",
+          "sentiment": "great",
+          "places": "Austin Cho",
+          "location": "Austin, NJ"
+        },
+        {
+          "theme": "restaurants",
+          "notes": "Highly recommended for BBQ, also nearby Itslisn bakery with cannoli",
+          "subreddit_name": "philadelphia",
+          "source_file": "dxj4j5_cleaned_extracted.json",
+          "location": "Philadelphia",
+          "sentiment": "great",
+          "places": "Mike's BBQ"
+        },
+        {
+          "sentiment": "good",
+          "subreddit_name": "newjersey",
+          "source_file": "1jj8nhf_cleaned_extracted.json",
+          "location": "East Hanover",
+          "places": "Super Chix",
+          "theme": "restaurants",
+          "notes": "Texas-style chicken restaurant with good food."
+        },
+        {
+          "subreddit_name": "philadelphia",
+          "places": "Mikes BBQ",
+          "sentiment": "great",
+          "theme": "hidden_gems",
+          "source_file": "dxj4j5_cleaned_extracted.json",
+          "location": "Philadelphia",
+          "notes": "Highly recommended for BBQ"
+        },
+        {
+          "places": "Kanoon's Halal Texas BBQ",
+          "notes": "Try the restaurant's unique fusion of flavors.",
+          "source_file": "1blms8r_cleaned_extracted.json",
+          "sentiment": "good",
+          "subreddit_name": "newjersey",
+          "theme": "things_to_do",
+          "location": "Montclair"
+        },
+        {
+          "sentiment": "great",
+          "places": "Mike's BBQ",
+          "source_file": "dxj4j5_cleaned_extracted.json",
+          "notes": "Highly recommended barbecue restaurant",
+          "theme": "restaurants",
+          "location": "South Philly, Philadelphia, PA",
+          "subreddit_name": "philadelphia"
+        },
+        {
+          "notes": "Still open, but the East Brunswick location is now Gusto Grill.",
+          "source_file": "1b56iwj_cleaned_extracted.json",
+          "sentiment": "okay",
+          "location": "New Brunswick",
+          "theme": "restaurants",
+          "subreddit_name": "newjersey",
+          "places": "Stuff yer face"
+        },
+        {
+          "sentiment": "great",
+          "places": "Cryderman's",
+          "theme": "hidden_gems",
+          "notes": "Best BBQ in the area",
+          "subreddit_name": "florida",
+          "source_file": "1m9puil_cleaned_extracted.json",
+          "location": "Melbourne"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-12-14T00:59:22.204666",
+    "question": "Where can I find good tacos in Los Angeles?",
+    "num_documents_retrieved": 8,
+    "answer_length": 337,
+    "retrieval_relevance": {
+      "explanation": "The question asks for good tacos in Los Angeles. However, none of the documents mention Los Angeles. They all mention different cities such as Philadelphia, Boston, and Pittsburgh, and recommend various taco places in those cities. Since none of the documents contain keywords or semantic meaning related to Los Angeles, they are all considered completely unrelated to the question.",
+      "relevant": false,
+      "relevance_score": 1
+    },
+    "answer_quality": {
+      "explanation": "The answer is grounded because it does not mention any places in Los Angeles that are not in the retrieved facts. However, it does not provide any helpful information to the user because the retrieved facts do not contain any information about Los Angeles. The answer does not hallucinate any places in Los Angeles.",
+      "is_grounded": true,
+      "is_helpful": false,
+      "hallucination_detected": false,
+      "quality_score": 2
+    },
+    "answer_relevance": {
+      "explanation": "The answer does not provide any recommendations for good tacos in Los Angeles, but it does explain why it cannot provide the information, which is related to the question.",
+      "addresses_question": true,
+      "completeness_score": 1
+    },
+    "context_precision": {
+      "explanation": "None of the documents are relevant to answering the question because they all mention locations outside of Los Angeles. Documents 1-8 mention cities such as Philadelphia, Boston, Pittsburgh, and others, but none provide information about finding good tacos in Los Angeles.",
+      "precision_score": 0.0,
+      "num_relevant": 0,
+      "num_total": 8
+    },
+    "rag_output": {
+      "question": "Where can I find good tacos in Los Angeles?",
+      "documents": [
+        "SUBREDDIT: philadelphia\nTHEME: restaurants\nLOCATION: Port Richmond, Philadelphia, PA\nPLACE: Rico\u2019s Mexican Tacos\nNOTES: Favorite tacos in the city with a great taco Tuesday deal.\nSENTIMENT: great",
+        "SUBREDDIT: boston\nTHEME: restaurants\nLOCATION: Boston\nPLACE: Pedro's Tacos\nNOTES: Best Mexican/Baja food in the city, with great tacos and quesadillas.\nSENTIMENT: great",
+        "SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Evans City\nPLACE: Hot Taco\nNOTES: Carne asada, closest to San Diego tacos\nSENTIMENT: good",
+        "SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Wilkins Township\nPLACE: Rey Azteca\nNOTES: Recommended for street food menu, especially tacos.\nSENTIMENT: good",
+        "SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Abq and Phoenix\nPLACE: Tacos Acosta\nNOTES: Recommended for its authentic New Mexican and Mexican food.\nSENTIMENT: great",
+        "SUBREDDIT: philadelphia\nTHEME: food_trucks\nLOCATION: Philadelphia, PA\nPLACE: Taco truck behind Autozone\nNOTES: Serves delicious tacos near Olney High School.\nSENTIMENT: great",
+        "SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Oakland\nPLACE: Las Palmas #2\nNOTES: Tacos were highly recommended.\nSENTIMENT: great",
+        "SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Bridgeville\nPLACE: La Casa Del Tacos\nNOTES: Takeout only, but great tacos\nSENTIMENT: great"
+      ],
+      "context": [
+        "Place: Rico\u2019s Mexican Tacos | City: N/A | Location: Port Richmond, Philadelphia, PA | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: philadelphia\nTHEME: restaurants\nLOCATION: Port Richmond, Philadelphia, PA\nPLACE: Rico\u2019s Mexican Tacos\nNOTES: Favorite tacos in the city with a great taco Tuesday deal.\nSENTIMENT: great",
+        "Place: Pedro's Tacos | City: N/A | Location: Boston | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: boston\nTHEME: restaurants\nLOCATION: Boston\nPLACE: Pedro's Tacos\nNOTES: Best Mexican/Baja food in the city, with great tacos and quesadillas.\nSENTIMENT: great",
+        "Place: Hot Taco | City: N/A | Location: Evans City | Theme: restaurants | Sentiment: good | Notes: SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Evans City\nPLACE: Hot Taco\nNOTES: Carne asada, closest to San Diego tacos\nSENTIMENT: good",
+        "Place: Rey Azteca | City: N/A | Location: Wilkins Township | Theme: restaurants | Sentiment: good | Notes: SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Wilkins Township\nPLACE: Rey Azteca\nNOTES: Recommended for street food menu, especially tacos.\nSENTIMENT: good",
+        "Place: Tacos Acosta | City: N/A | Location: Abq and Phoenix | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Abq and Phoenix\nPLACE: Tacos Acosta\nNOTES: Recommended for its authentic New Mexican and Mexican food.\nSENTIMENT: great",
+        "Place: Taco truck behind Autozone | City: N/A | Location: Philadelphia, PA | Theme: food_trucks | Sentiment: great | Notes: SUBREDDIT: philadelphia\nTHEME: food_trucks\nLOCATION: Philadelphia, PA\nPLACE: Taco truck behind Autozone\nNOTES: Serves delicious tacos near Olney High School.\nSENTIMENT: great",
+        "Place: Las Palmas #2 | City: N/A | Location: Oakland | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Oakland\nPLACE: Las Palmas #2\nNOTES: Tacos were highly recommended.\nSENTIMENT: great",
+        "Place: La Casa Del Tacos | City: N/A | Location: Bridgeville | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Bridgeville\nPLACE: La Casa Del Tacos\nNOTES: Takeout only, but great tacos\nSENTIMENT: great"
+      ],
+      "answer": "Unfortunately, the provided context does not mention any places in Los Angeles. It mentions places in Philadelphia, Boston, Evans City, Wilkins Township, Abq, Phoenix, Oakland, and Bridgeville, but none of these are in Los Angeles. Therefore, I cannot provide any recommendations for good tacos in Los Angeles based on the given context.",
+      "metadatas": [
+        {
+          "sentiment": "great",
+          "location": "Port Richmond, Philadelphia, PA",
+          "places": "Rico\u2019s Mexican Tacos",
+          "subreddit_name": "philadelphia",
+          "theme": "restaurants",
+          "source_file": "1gvtn2m_cleaned_extracted.json",
+          "notes": "Favorite tacos in the city with a great taco Tuesday deal."
+        },
+        {
+          "location": "Boston",
+          "subreddit_name": "boston",
+          "places": "Pedro's Tacos",
+          "theme": "restaurants",
+          "source_file": "2155ic_cleaned_extracted.json",
+          "notes": "Best Mexican/Baja food in the city, with great tacos and quesadillas.",
+          "sentiment": "great"
+        },
+        {
+          "sentiment": "good",
+          "places": "Hot Taco",
+          "source_file": "1ktv40v_cleaned_extracted.json",
+          "subreddit_name": "pittsburgh",
+          "notes": "Carne asada, closest to San Diego tacos",
+          "location": "Evans City",
+          "theme": "restaurants"
+        },
+        {
+          "places": "Rey Azteca",
+          "sentiment": "good",
+          "theme": "restaurants",
+          "location": "Wilkins Township",
+          "subreddit_name": "pittsburgh",
+          "notes": "Recommended for street food menu, especially tacos.",
+          "source_file": "15fqa8x_cleaned_extracted.json"
+        },
+        {
+          "sentiment": "great",
+          "notes": "Recommended for its authentic New Mexican and Mexican food.",
+          "subreddit_name": "pittsburgh",
+          "source_file": "15fqa8x_cleaned_extracted.json",
+          "theme": "restaurants",
+          "places": "Tacos Acosta",
+          "location": "Abq and Phoenix"
+        },
+        {
+          "location": "Philadelphia, PA",
+          "notes": "Serves delicious tacos near Olney High School.",
+          "sentiment": "great",
+          "subreddit_name": "philadelphia",
+          "places": "Taco truck behind Autozone",
+          "theme": "food_trucks",
+          "source_file": "1dljj7l_cleaned_extracted.json"
+        },
+        {
+          "source_file": "14jkgas_cleaned_extracted.json",
+          "places": "Las Palmas #2",
+          "sentiment": "great",
+          "location": "Oakland",
+          "notes": "Tacos were highly recommended.",
+          "theme": "restaurants",
+          "subreddit_name": "pittsburgh"
+        },
+        {
+          "source_file": "1ktv40v_cleaned_extracted.json",
+          "location": "Bridgeville",
+          "notes": "Takeout only, but great tacos",
+          "subreddit_name": "pittsburgh",
+          "places": "La Casa Del Tacos",
+          "theme": "restaurants",
+          "sentiment": "great"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2025-12-14T00:59:34.184761",
+    "question": "Romantic dinner spots in San Francisco",
+    "num_documents_retrieved": 8,
+    "answer_length": 510,
+    "retrieval_relevance": {
+      "explanation": "The question asks for romantic dinner spots in San Francisco. However, all the provided documents are related to restaurants in Pittsburgh or Philadelphia, with no mention of San Francisco. Although some documents discuss restaurants and food, which could be tangentially related to dinner spots, none of them specifically address San Francisco or romantic dinner spots.",
+      "relevant": false,
+      "relevance_score": 1
+    },
+    "answer_quality": {
+      "explanation": "The answer is grounded because it does not mention any made-up places and is based on the lack of information in the retrieved facts. It is helpful because it informs the user that the provided context does not contain any information about San Francisco or romantic dinner spots, and suggests that more context or information specific to the city is needed. No hallucination is detected because the answer does not mention any places not present in the retrieved facts.",
+      "is_grounded": true,
+      "is_helpful": true,
+      "hallucination_detected": false,
+      "quality_score": 5
+    },
+    "answer_relevance": {
+      "explanation": "The answer does not provide any information about romantic dinner spots in San Francisco. Instead, it mentions locations in the Pittsburgh area and Monterey Bay, and states that it needs more context to provide recommendations for San Francisco.",
+      "addresses_question": false,
+      "completeness_score": 1
+    },
+    "context_precision": {
+      "explanation": "None of the documents are relevant to answering the question about romantic dinner spots in San Francisco. All the documents are about restaurants in Pittsburgh or other locations, but none of them are in San Francisco.",
+      "precision_score": 0.0,
+      "num_relevant": 0,
+      "num_total": 8
+    },
+    "rag_output": {
+      "question": "Romantic dinner spots in San Francisco",
+      "documents": [
+        "SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Oakland\nPLACE: Monterey Bay\nNOTES: Angel food cake grilled cheese was highly recommended.\nSENTIMENT: great",
+        "SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Oakdale\nPLACE: El Marro Restaurant & Mariscos LLC\nNOTES: Try this place, great Mexican food.\nSENTIMENT: great",
+        "SUBREDDIT: philadelphia\nTHEME: practical_tips\nLOCATION: Port Richmond, PA\nPLACE: Dinner House\nNOTES: A hidden gem for delicious home-cooked meals.\nSENTIMENT: great",
+        "SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Oakland\nPLACE: Las Palmas #2\nNOTES: Tacos were highly recommended.\nSENTIMENT: great",
+        "SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Bloomfield/L-ville\nPLACE: Lis Cabos\nNOTES: Delicious Mexican food, worth the extra $10.\nSENTIMENT: great",
+        "SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Oakland\nPLACE: The Rock Room\nNOTES: $.50 pizza boat was highly recommended.\nSENTIMENT: great",
+        "SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Pittsburgh\nPLACE: Dos Reyes\nNOTES: Food truck with home base at Apis Meadery in Carnegie, serving authentic Mexican dishes.\nSENTIMENT: great",
+        "SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Evans City\nPLACE: Hot Taco\nNOTES: Carne asada, closest to San Diego tacos\nSENTIMENT: good"
+      ],
+      "context": [
+        "Place: Monterey Bay | City: N/A | Location: Oakland | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Oakland\nPLACE: Monterey Bay\nNOTES: Angel food cake grilled cheese was highly recommended.\nSENTIMENT: great",
+        "Place: El Marro Restaurant & Mariscos LLC | City: N/A | Location: Oakdale | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Oakdale\nPLACE: El Marro Restaurant & Mariscos LLC\nNOTES: Try this place, great Mexican food.\nSENTIMENT: great",
+        "Place: Dinner House | City: N/A | Location: Port Richmond, PA | Theme: practical_tips | Sentiment: great | Notes: SUBREDDIT: philadelphia\nTHEME: practical_tips\nLOCATION: Port Richmond, PA\nPLACE: Dinner House\nNOTES: A hidden gem for delicious home-cooked meals.\nSENTIMENT: great",
+        "Place: Las Palmas #2 | City: N/A | Location: Oakland | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Oakland\nPLACE: Las Palmas #2\nNOTES: Tacos were highly recommended.\nSENTIMENT: great",
+        "Place: Lis Cabos | City: N/A | Location: Bloomfield/L-ville | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Bloomfield/L-ville\nPLACE: Lis Cabos\nNOTES: Delicious Mexican food, worth the extra $10.\nSENTIMENT: great",
+        "Place: The Rock Room | City: N/A | Location: Oakland | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Oakland\nPLACE: The Rock Room\nNOTES: $.50 pizza boat was highly recommended.\nSENTIMENT: great",
+        "Place: Dos Reyes | City: N/A | Location: Pittsburgh | Theme: restaurants | Sentiment: great | Notes: SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Pittsburgh\nPLACE: Dos Reyes\nNOTES: Food truck with home base at Apis Meadery in Carnegie, serving authentic Mexican dishes.\nSENTIMENT: great",
+        "Place: Hot Taco | City: N/A | Location: Evans City | Theme: restaurants | Sentiment: good | Notes: SUBREDDIT: pittsburgh\nTHEME: restaurants\nLOCATION: Evans City\nPLACE: Hot Taco\nNOTES: Carne asada, closest to San Diego tacos\nSENTIMENT: good"
+      ],
+      "answer": "Unfortunately, the provided context does not mention San Francisco or any romantic dinner spots. The locations mentioned are primarily in the Pittsburgh area (Oakland, Oakdale, Port Richmond, PA, Bloomfield/L-ville, Pittsburgh, Evans City, and Carnegie) and Monterey Bay. \n\nHowever, none of the mentioned places are in San Francisco, and there is no information about romantic dinner spots. If you're looking for recommendations in San Francisco, I would need more context or information specific to that city.",
+      "metadatas": [
+        {
+          "subreddit_name": "pittsburgh",
+          "source_file": "14jkgas_cleaned_extracted.json",
+          "location": "Oakland",
+          "notes": "Angel food cake grilled cheese was highly recommended.",
+          "sentiment": "great",
+          "places": "Monterey Bay",
+          "theme": "restaurants"
+        },
+        {
+          "theme": "restaurants",
+          "subreddit_name": "pittsburgh",
+          "notes": "Try this place, great Mexican food.",
+          "sentiment": "great",
+          "location": "Oakdale",
+          "source_file": "1ktv40v_cleaned_extracted.json",
+          "places": "El Marro Restaurant & Mariscos LLC"
+        },
+        {
+          "notes": "A hidden gem for delicious home-cooked meals.",
+          "source_file": "r57we8_cleaned_extracted.json",
+          "sentiment": "great",
+          "subreddit_name": "philadelphia",
+          "places": "Dinner House",
+          "location": "Port Richmond, PA",
+          "theme": "practical_tips"
+        },
+        {
+          "source_file": "14jkgas_cleaned_extracted.json",
+          "location": "Oakland",
+          "notes": "Tacos were highly recommended.",
+          "places": "Las Palmas #2",
+          "theme": "restaurants",
+          "subreddit_name": "pittsburgh",
+          "sentiment": "great"
+        },
+        {
+          "source_file": "1g8e8lk_cleaned_extracted.json",
+          "notes": "Delicious Mexican food, worth the extra $10.",
+          "subreddit_name": "pittsburgh",
+          "places": "Lis Cabos",
+          "theme": "restaurants",
+          "location": "Bloomfield/L-ville",
+          "sentiment": "great"
+        },
+        {
+          "location": "Oakland",
+          "notes": "$.50 pizza boat was highly recommended.",
+          "places": "The Rock Room",
+          "theme": "restaurants",
+          "sentiment": "great",
+          "subreddit_name": "pittsburgh",
+          "source_file": "14jkgas_cleaned_extracted.json"
+        },
+        {
+          "source_file": "15fqa8x_cleaned_extracted.json",
+          "subreddit_name": "pittsburgh",
+          "places": "Dos Reyes",
+          "sentiment": "great",
+          "notes": "Food truck with home base at Apis Meadery in Carnegie, serving authentic Mexican dishes.",
+          "theme": "restaurants",
+          "location": "Pittsburgh"
+        },
+        {
+          "theme": "restaurants",
+          "source_file": "1ktv40v_cleaned_extracted.json",
+          "notes": "Carne asada, closest to San Diego tacos",
+          "location": "Evans City",
+          "sentiment": "good",
+          "places": "Hot Taco",
+          "subreddit_name": "pittsburgh"
+        }
+      ]
+    }
+  }
+]
